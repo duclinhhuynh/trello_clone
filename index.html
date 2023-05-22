@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>Trello clone</title>
+</head>
+<body>  
+    <header>
+            <div class="header-flex">
+                <span id="sidebar-button"><i class="fa fa-list"></i></span>
+                <h1 id="title" class="text-align-center">trello</h1>
+                <span class="title-actions-container" style="font-size:25px;cursor:pointer;letter-spacing: 1ch;">
+                    <label for="auto-save" class="auto-save-text">Auto Save</label>
+                    <label class="switch" id="auto-save-label">
+                       <input id="auto-save" type="checkbox" checked>
+                       <span class="slider round"></span>
+                    </label>
+                    <i title="Delete this board." id="delete-button" class="fa fa-trash"></i>
+                    <i title="Save all boards." id="save-button" class="fa fa-floppy-o"></i>
+                    <i title="Theme" id="theme" class="uil uil-palette"></i>
+                    <i title="Settings" id="settings-button" class="fa fa-gear"></i>
+                </span>
+            </div>
+    </header>
+    <!-- slider bar   -->
+    <div id="sidebar" class="sidenav">
+        <!-- dấu X -->
+        <span id="sidebar-close">&times;</span>      
+        <p class="is-title">Boards</p>
+        <ul id="boards-list">
+            <!-- Boards will be listed here... -->
+        </ul>
+        <div class="flex-col">
+            <input type="text" id="add-board-text" name="add-board" placeholder="Add Board...">
+            <!-- add task_button  -->
+            <button id="add-board-button">Add Board</button>
+        </div>
+    </div>
+
+       <!-- Right-click context menu on cards. -->
+    <div id="card-context-menu" class="context-menu">
+        <ul>
+            <li id="card-context-menu-delete">Delete</li>
+            <li id="card-context-menu-clear">Clear</li>
+            <li id="card-context-menu-duplicate">Duplicate</li>
+        </ul>
+    </div>
+    <!-- add card  -->
+    <div class="container" id="main-container">
+        <div id="cards-container">
+            <div id="add-card">
+                <input maxlength="128" type="text" id="add-card-text" name="add-card" placeholder="Add Card..." autofocus>
+                <button id="add-card-button" class="plus-button">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- cảnh báo  -->
+    <div id="alert-container">
+        <div id="alerts">
+        </div>
+    </div>
+    <!-- confirm and cancel -->
+    <div id="confirm-dialog" class="modal">
+        <div class="dialog-content">
+            <span id="confirm-dialog-close" class="confirm-dialog-close">&times;</span>
+            <div id="confirm-dialog-text" class="confirm-dialog-text"></div>
+            <div class="confirm-dialog-actions">
+                <button id="confirm-dialog-cancel" class="confirm-dialog-cancel"> Cancel </button>
+                <button id="confirm-dialog-confirm" class="confirm-dialog-confirm"> Confirm </button>
+            </div>
+        </div>
+    </div>
+     <!-- theme -->
+     <div class="customize-theme" style="display: grid;">
+        <div class="card">
+            <h2>Cutomize your view</h2>
+            <p class="text-muted">Manage your font size, color, and background</p>
+            <!-- ----------------------Font sizes--------------------- -->
+            <div class="font-size">
+                <h4>Font Size</h4>
+                <div>
+                    <h6>Aa</h6>
+                <div class="choose-size">
+                    <span class="font-size-1"></span>
+                    <span class="font-size-2 active"></span>
+                    <span class="font-size-3"></span>   
+                    <span class="font-size-4"></span>
+                    <span class="font-size-5"></span>
+                </div>
+                    <h3>Aa</h3>
+                </div>
+            </div>
+            <!-- ----------------------Primary color--------------------- -->
+            <div class="color">
+                <h4>Color</h4>
+                    <div class="choose-color">
+                        <span class="color-1 active"></span>
+                        <span class="color-2"></span>
+                        <span class="color-3"></span>   
+                        <span class="color-4"></span>
+                        <span class="color-5"></span>
+                    </div>
+            </div>
+            <!-- -----------------Background colors-------------------->
+            <div class="background">
+                <h4>background</h4>
+                <div class="choose-bg">
+                    <div class="bg-1 active">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
+                    </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5 for="bg-2">Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5 for="bg-3">Light Out</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
